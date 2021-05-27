@@ -1,0 +1,37 @@
+Rd2md v0.0.5 (Release date: 2021-02-01)
+==============
+
+Changes:
+
+* Minor typos and code fixes as well as documentation update
+
+Rd2md v0.0.4 (Release date: 2018-10-18)
+==============
+
+Changes:
+
+* Some minor code modifications (style)
+* Bugfix https://github.com/quants-ch/Rd2md/issues/1
+
+
+Rd2md v0.0.3 (Release date: 2017-08-01)
+==============
+
+Changes:
+
+* Additional functionality to compile reference manuals / markdowns from binary packages
+* Minor changes in markdown output
+
+Rd2md v0.0.2 (Release date: 2017-05-19)
+==============
+
+Changes:
+
+* Bugfixes
+
+Rd2md v0.0.1 (Release date: 2017-05-19)
+==============
+
+Changes:
+
+* Initial upload to CRAN

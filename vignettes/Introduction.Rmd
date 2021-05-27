@@ -1,0 +1,24 @@
+---
+title: "Introduction to jamstackingup"
+author: "Saiem Gilani"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::pdf_document
+vignette: >
+  %\VignetteIndexEntry{Introduction jamstackingup}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Installation
+
+You can install the released version of [**`jamstackingup`**](https://github.com/saiemgilani/jamstackingup/) from [GitHub](https://github.com/saiemgilani/jamstackingup) with:
+
+```r
+# You can install using the pacman package using the following code:
+if (!requireNamespace('pacman', quietly = TRUE)){
+  install.packages('pacman')
+}
+pacman::p_load_current_gh("saiemgilani/jamstackingup")
+```
+

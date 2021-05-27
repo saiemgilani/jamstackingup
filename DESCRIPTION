@@ -1,0 +1,21 @@
+Package: jamstackingup
+Title: Creating Jamstack Markdown Package Documentation Websites
+Version: 0.0.1
+Authors@R: person("Saiem", "Gilani", email = "saiem.gilani@gmail.com", role = c("aut", "cre"))
+Description: Creates a jamstack website (Next.JS, React, Gatsby, etc.) by converting the package documentation files into markdown files and generating pages using page templates along the respective routes.
+Depends:
+    R (>= 3.6)
+Imports:
+	knitr,
+	tools,
+	rmarkdown (>= 1.12),
+  docopt (>= 0.6.1),
+  strex (>= 1.2.0)
+Suggests:
+	testthat,
+  devtools
+License: GPL
+Encoding: UTF-8
+LazyData: true
+VignetteBuilder: knitr
+RoxygenNote: 7.1.1
