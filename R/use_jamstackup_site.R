@@ -26,13 +26,21 @@ use_jamstackup_site <- function(pkg_dir = ".",
     })
     vig_lst <- list.files(path = glue::glue('vignettes'))
     vigs <- purrr::map(vig_lst[stringr::str_detect(vig_lst,'.Rmd')] , function(x){
-      jamstackingup::writeMDX(input = glue::glue('vignettes/{x}'))
+      rmarkdown::render(input = glue::glue('vignettes/{x}'), output_format = rmarkdown::html_document(keep_md = TRUE))
     })
     vig_lst <- list.files(path = glue::glue('vignettes'))
-    vigs_mdx <- purrr::map(vig_lst[stringr::str_detect(vig_lst,'.mdx')] , function(x){
-      fs::file_copy(path = glue::glue('vignettes/{x}'),
-                    new_path = glue::glue('{site_dir}/articles/{x}'),overwrite=TRUE)
-      unlink(glue::glue("vignettes/{x}"))
+    vigs_md <- purrr::map(vig_lst , function(x){
+      if(tools::file_ext(glue::glue("{x}"))== "md"){
+        fs::file_copy(path = glue::glue('vignettes/{x}'),
+                      new_path = glue::glue('{site_dir}/articles/{x}'),overwrite=TRUE)
+      }
+    })
+    vig_lst <- list.files(path = glue::glue('vignettes'))
+
+    vigs_rm <- purrr::map(vig_lst , function(x){
+      if(tools::file_ext(glue::glue("{x}"))!= "Rmd"){
+        unlink(glue::glue("vignettes/{x}"))
+      }
     })
     fs::file_copy(path = glue::glue('logo.png'),
                   new_path = glue::glue('{site_dir}/public/logo/logo.png'),overwrite=TRUE)
