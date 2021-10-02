@@ -2,9 +2,9 @@
 #' @docType package
 #' @title Creating Jamstack Markdown Package Documentation Websites
 #' @description By converting the package documentation files into markdown files and generating pages using page templates along the respective routes.
-#' @author Saiem Gilani <saiem.gilani@gmail.com>
+#' @author Saiem Gilani <saiem.gilani@@gmail.com>
 #' @keywords Rd help markdown
-#' @seealso \code{knitr}
+#' @seealso `knitr`
 #' @import tools
 #' @import knitr
 NULL

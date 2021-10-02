@@ -22,3 +22,13 @@ if (!requireNamespace('pacman', quietly = TRUE)){
 pacman::p_load_current_gh("saiemgilani/jamstackingup")
 ```
 
+It's like one function:
+
+```{r, onefunctionswearsiesrealsies,eval = FALSE}
+jamstackingup::use_jamstackup_site(
+  pkg_dir = '.', 
+  site_dir = "website", 
+  template = "nextjs-ts", 
+  rebuild = FALSE
+)
+```

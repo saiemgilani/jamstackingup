@@ -5,8 +5,8 @@
 \title{Rd file to markdown}
 \usage{
 roxygen2markdown(
-  rdfile = "../wehoop-dev/wehoop/man/espn_wbb_player_box.Rd",
-  outfile = "md/espn_wbb_player_box.md",
+  rdfile = "D:/GitHub-Data/jamstackingup/man/cfbd_betting.Rd",
+  outfile = "D:/GitHub-Data/jamstackingup/md/cfbd_betting.md",
   append = FALSE
 )
 }

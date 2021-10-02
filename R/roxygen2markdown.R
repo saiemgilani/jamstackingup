@@ -14,8 +14,8 @@
 #' ## create markdown
 #' ## roxygen2markdown(rdfile = rdfile, outfile = outfile)
 roxygen2markdown <- function(
-  rdfile="../wehoop-dev/wehoop/man/espn_wbb_player_box.Rd",
-  outfile = "md/espn_wbb_player_box.md",
+  rdfile="man/cfbd_betting.Rd",
+  outfile="md/cfbd_betting.md",
   append=FALSE) {
 	# VALIDATION
 	append <- as.logical(append)
@@ -39,7 +39,7 @@ roxygen2markdown <- function(
 
 	# Parse rd file
 	if (type == "src") {
-		rd <- parse_Rd(rdfile)
+		rd <- parse_Rd(rdfile,verbose = TRUE,permissive = TRUE)
 	} else {
 		if (inherits(rdfile, "list"))  {
 			rdfile = rdfile[[1]]
@@ -79,9 +79,13 @@ roxygen2markdown <- function(
 				if (i %in% c("examples", "usage")) {
 				  cat("```r", paste(results[[i]], collapse="\n"), "```", file=outfile, append=TRUE, sep="\n")
 				} else if (i == "arguments") {
-					cat("Argument      |Description\n", file=outfile, append=TRUE)
-					cat("------------- |----------------\n", file=outfile, append=TRUE)
-					cat(paste0("`", names(results[[i]]), "`", "     |     ", results[[i]], collapse="\n"), file=outfile, append=TRUE, sep="\n")
+					cat("Argument |Description\n", file=outfile, append=TRUE)
+					cat("-------- |------------\n", file=outfile, append=TRUE)
+					cat(paste0("`", names(results[[i]]), "`", " | ", results[[i]], collapse="\n"), file=outfile, append=TRUE, sep="\n")
+				} else if (i == "value") {
+				  cat("Column |Description\n", file=outfile, append=TRUE)
+				  cat("------- |------------\n", file=outfile, append=TRUE)
+				  cat(paste0("`", names(results[[i]]), "`", " | ", results[[i]], collapse="\n"), file=outfile, append=TRUE, sep="\n")
 				} else {
 					cat(paste0(results[[i]], collapse="\n"), file=outfile, append=TRUE, sep="\n")
 				}
@@ -92,5 +96,5 @@ roxygen2markdown <- function(
 		warning("name and title are required. Not creating markdown file")
 	}
 
-	invisible(results)
+	results
 }

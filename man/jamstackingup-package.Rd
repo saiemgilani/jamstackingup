@@ -11,7 +11,7 @@ By converting the package documentation files into markdown files and generating
 \code{knitr}
 }
 \author{
-Saiem Gilani <saiem.gilani@gmail.com>
+Saiem Gilani \href{mailto:saiem.gilani@gmail.com}{saiem.gilani@gmail.com}
 }
 \keyword{Rd}
 \keyword{help}

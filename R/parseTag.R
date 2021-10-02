@@ -2,8 +2,8 @@
 #' @title Tag from Rd Format to Markdown
 #' @description This function will convert an Rd element to markdown format.
 #' Note that links are only supported within a markdown document, referenced with #.
-#' Use \code{href} to link to external sources.
-#' @param x element from an \code{Rd} class.
+#' Use `href` to link to external sources.
+#' @param x element from an `Rd` class.
 #' @param pre String to prepend to the parsed tag.
 #' @param post String to append to the parsed tag.
 #' @param stripNewline Logical indicating whether to strip new line characters.
@@ -58,11 +58,16 @@ parseTag <- function(x
 	} else if (rdtag == "\\href") {
 		x <- paste0("[", as.character(x[[2]]), "](", as.character(x[[1]]), ")")
 	} else if (rdtag == "\\item") {
-		x <- "\n\n* "
+	  x <- trim(paste(sapply(x, FUN=function(x) {
+	    parseTag(x, stripNewline=FALSE)
+	  } ), collapse=""))
 	} else if (rdtag == "\\itemize") {
 		x <- paste(sapply(x, parseTag), collapse=" ")
 	} else if (rdtag == "\\describe") {
 	  x <- paste(sapply(x, parseTag), collapse=" ")
+	  if (stripTab) { x <- gsub("\t", "", x)}
+	  if (stripNewline) { x <- gsub("\n", "", x) }
+	  if (stripWhite) { x <- stripWhite(x) }
 	} else if (rdtag == "\\enumerate") {
 		warning("enumerate not currently supported. Items will be bulleted instead.")
 		x <- paste(sapply(x, parseTag), collapse=" ")

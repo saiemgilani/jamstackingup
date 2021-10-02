@@ -4,18 +4,18 @@
 #' @description This is a wrapper to combine the Rd files of a package source or binary
 #' into a reference manual in markdown format.
 #' @param pkg Full path to package directory. Default value is the working directory.
-#' Alternatively, a package name can be passed. If this is the case, \code{\link[base]{find.package}} is applied.
+#' Alternatively, a package name can be passed. If this is the case, [base::find.package()] is applied.
 #' @param outdir Output directory where the reference manual markdown shall be written to.
 #' @param front.matter String with yaml-style heading of markdown file.
 #' @param toc.matter String providing the table of contents. This is not auto-generated.
 #' The default value is a HTML comment, used by gitbook plugin
-#' \href{https://www.npmjs.com/package/gitbook-plugin-toc}{toc}.
+#' [toc](https://www.npmjs.com/package/gitbook-plugin-toc).
 #' @param date.format Date format that shall be written to the beginning of the reference manual.
-#' If \code{NULL}, no date is written.
-#' Otherwise, provide a valid format (e.g. \code{\%Y-\%m-\%d}), see Details in \link[base]{strptime}.
-#' @param verbose If \code{TRUE} all messages and process steps will be printed
-#' @references Murdoch, D. (2010). \href{https://developer.R-project.org/parseRd.pdf}{Parsing Rd files}
-#' @seealso Package \href{https://github.com/jbryer/Rd2markdown}{Rd2markdown} by jbryer
+#' If `NULL`, no date is written.
+#' Otherwise, provide a valid format (e.g. `\%Y-\%m-\%d`), see Details in [strptime][base::strptime].
+#' @param verbose If `TRUE` all messages and process steps will be printed
+#' @references Murdoch, D. (2010). [Parsing Rd files](https://developer.R-project.org/parseRd.pdf)
+#' @seealso Package [Rd2markdown](https://github.com/jbryer/Rd2markdown) by jbryer
 #' @examples
 #' ## give source directory of your package
 #' pkg_dir = "~/git/MyPackage"

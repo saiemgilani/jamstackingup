@@ -15,7 +15,7 @@ ReferenceManual(
 }
 \arguments{
 \item{pkg}{Full path to package directory. Default value is the working directory.
-Alternatively, a package name can be passed. If this is the case, \code{\link[base]{find.package}} is applied.}
+Alternatively, a package name can be passed. If this is the case, \code{\link[base:find.package]{base::find.package()}} is applied.}
 
 \item{outdir}{Output directory where the reference manual markdown shall be written to.}
 
@@ -27,7 +27,7 @@ The default value is a HTML comment, used by gitbook plugin
 
 \item{date.format}{Date format that shall be written to the beginning of the reference manual.
 If \code{NULL}, no date is written.
-Otherwise, provide a valid format (e.g. \code{\%Y-\%m-\%d}), see Details in \link[base]{strptime}.}
+Otherwise, provide a valid format (e.g. \verb{\\\%Y-\\\%m-\\\%d}), see Details in \link[base:strptime]{strptime}.}
 
 \item{verbose}{If \code{TRUE} all messages and process steps will be printed}
 }

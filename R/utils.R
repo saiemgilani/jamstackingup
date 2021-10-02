@@ -60,7 +60,7 @@ stripWhite <- function(x) {
 
 #' @title Extract Rd tags
 #' @description Extract Rd tags from Rd object
-#' @param Rd Object of class \code{Rd}
+#' @param Rd Object of class `Rd`
 #' @return character vector with Rd tags
 RdTags = function(Rd) {
   res <- sapply(Rd, attr, "Rd_tag")
@@ -80,7 +80,7 @@ simpleCap <- function(x) {
 
 #' @title Make first letter capital
 #' @description Capitalize the first letter of every new word. Very simplistic approach.
-#' @param filebase The file path to the database (\code{.rdb} file), with no extension
+#' @param filebase The file path to the database (`.rdb` file), with no extension
 #' @param key Keys to fetch
 #' @return character vector with capitalized first letters
 fetchRdDB <- function (filebase, key = NULL) {

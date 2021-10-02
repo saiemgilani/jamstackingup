@@ -3,7 +3,7 @@
 #' @title writeMDX
 #' @description write and Rmarkdown (.Rmd) file to MDX (.mdx) format.
 #' @param input Input file (.Rmd format).
-#' @param config \code{list}. Configurable YAML fields to check for. Default is
+#' @param config `list`. Configurable YAML fields to check for. Default is
 #' config = list("date", "title", "featuredImage")
 #' @examples
 #' \dontrun{

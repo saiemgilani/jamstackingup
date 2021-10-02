@@ -3,7 +3,7 @@
 #' @title Parse an Rd object
 #' @description This function will parse an Rd object returning a list with each section. The
 #' contents of each element of the list will be converted to markdown.
-#' @param rd An \code{Rd} object.
+#' @param rd An `Rd` object.
 #' @return a named list with the parts of the Rd object that will be used for creating
 #' a markdown file
 #' @examples
@@ -22,7 +22,6 @@ parseRd <- function(rd) {
 	if(!("\\name" %in% tags)) {
 		return(results)
 	}
-	"\\value" %in% tags
 	for (i in sections) {
 		if (i %in% tags) {
 			# Handle \argument section separately
@@ -39,6 +38,21 @@ parseRd <- function(rd) {
 					names(params)[length(params)] <- param.name
 				}
 				results$arguments <- params
+			} else if(i == "\\value") {
+			  rets <- rd[[which(tags == "\\value")]]
+			  rets_txt <- rets[[3]]
+			  rets.tags <- RdTags(rets_txt)
+			  rets_txt <- rets_txt[which(rets.tags == "\\item")]
+			  vals <- character()
+			  for(i in seq_along(rets_txt)) {
+			    vals.name <- as.character(rets_txt[[i]][[1]][[1]])
+			    vals.type <- as.character(rets_txt[[i]][[1]][[2]])
+			    vals.desc <- paste(sapply(rets_txt[[i]][[2]],
+			                               FUN=function(x) { parseTag(x) }), collapse=" ")
+			    vals <- c(vals, vals.desc)
+			    names(vals)[length(vals)] <- vals.name
+			  }
+			  results$value <- vals
 			} else if (i == "\\usage") {
 				results[["usage"]] <- trim(paste(sapply(rd[[which(tags == "\\usage")]],
 							   FUN=function(x) {
@@ -59,5 +73,5 @@ parseRd <- function(rd) {
 		}
 	}
 
-	invisible(results)
+	results
 }

@@ -7,7 +7,8 @@
 use_jamstackup_site(
   pkg_dir = ".",
   site_dir = "website",
-  template = "nextjs-ts"
+  template = "nextjs-ts",
+  rebuild = FALSE
 )
 }
 \arguments{
@@ -16,6 +17,8 @@ use_jamstackup_site(
 \item{site_dir}{Directory to clone the website template in}
 
 \item{template}{site template (default: "nextjs-ts")}
+
+\item{rebuild}{Logical. Remove and rebuild website}
 }
 \description{
 Shell script to build the website directory
