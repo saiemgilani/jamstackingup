@@ -39,7 +39,7 @@ roxygen2markdown <- function(
 
 	# Parse rd file
 	if (type == "src") {
-		rd <- parse_Rd(rdfile,verbose = TRUE,permissive = TRUE)
+		rd <- tools::parse_Rd(rdfile,verbose = TRUE,permissive = TRUE)
 	} else {
 		if (inherits(rdfile, "list"))  {
 			rdfile = rdfile[[1]]

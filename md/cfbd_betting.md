@@ -1,6 +1,6 @@
 ---
 title: cfbd_betting
-description: list("Get betting lines information for games") list(list("html"), list(list("<div class=\"r\">"))) list(" cfbd_betting_lines(year = 2018, week = 12, team = \"Florida State\")\n", "\n", " # 7 OTs LSU at TAMU\n", " cfbd_betting_lines(year = 2018, week = 13, team = \"Texas A&M\", conference = \"SEC\")\n") list(list("html"), list(list("</div>")))
+description: list("Get betting lines information for games")list(" cfbd_betting_lines(year = 2018, week = 12, team = \"Florida State\")\n", "\n", " # 7 OTs LSU at TAMU\n", " cfbd_betting_lines(year = 2018, week = 13, team = \"Texas A&M\", conference = \"SEC\")\n")
 featured: true
 topics: Betting
 recommended: null
@@ -12,7 +12,7 @@ CFBD Betting Lines Endpoint Overview
 
 ## Description
 
-list("Get betting lines information for games") list(list("html"), list(list("<div class=\"r\">"))) list(" cfbd_betting_lines(year = 2018, week = 12, team = \"Florida State\")\n", "\n", " # 7 OTs LSU at TAMU\n", " cfbd_betting_lines(year = 2018, week = 13, team = \"Texas A&M\", conference = \"SEC\")\n") list(list("html"), list(list("</div>")))
+list("Get betting lines information for games")list(" cfbd_betting_lines(year = 2018, week = 12, team = \"Florida State\")\n", "\n", " # 7 OTs LSU at TAMU\n", " cfbd_betting_lines(year = 2018, week = 13, team = \"Texas A&M\", conference = \"SEC\")\n")
 
 
 ## Usage

@@ -5,8 +5,8 @@
 \title{Rd file to markdown}
 \usage{
 roxygen2markdown(
-  rdfile = "D:/GitHub-Data/jamstackingup/man/cfbd_betting.Rd",
-  outfile = "D:/GitHub-Data/jamstackingup/md/cfbd_betting.md",
+  rdfile = "man/cfbd_betting.Rd",
+  outfile = "md/cfbd_betting.md",
   append = FALSE
 )
 }
