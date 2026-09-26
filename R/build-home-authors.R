@@ -52,7 +52,7 @@ data_author_info <- function(pkg = ".") {
 
   defaults <- list(
     "Saiem Gilani" = list(
-      href = "http://saiemgilani.me"
+      href = "https://www.saiemgilani.com"
     ),
     "SportsDataverse" = list(
       href = "https://www.sportsdataverse.org"
